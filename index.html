@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Muhammad Idzam El-Jalaluddin Rummi</title><!-- Element SDK untuk fitur editing -->
+  <script src="/_sdk/element_sdk.js"></script><!-- Tailwind CSS untuk styling -->
+  <script src="https://cdn.tailwindcss.com"></script><!-- Google Fonts - Poppins untuk tampilan modern -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@600;700&amp;family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================
+       STYLE DASAR - Pengaturan box-sizing
+       ========================================== */
+    body {
+      box-sizing: border-box;
+    }
+    
+    /* ==========================================
+       FONT FAMILIES
+       ========================================== */
+    .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .font-playfair {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* Font Arabic untuk tagline */
+    .font-arabic {
+      font-family: 'Amiri', serif;
+    }
+    
+    /* ==========================================
+       ANIMASI SCROLL SMOOTH
+       ========================================== */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* ==========================================
+       ANIMASI FADE IN
+       ========================================== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+      }
+    }
+    
+    .animate-fade-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-fade-left {
+      animation: fadeInLeft 0.8s ease-out forwards;
+    }
+    
+    .animate-fade-right {
+      animation: fadeInRight 0.8s ease-out forwards;
+    }
+    
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .animate-pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    /* Delay animasi untuk staggered effect */
+    .delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .delay-300 { animation-delay: 0.3s; opacity: 0; }
+    .delay-400 { animation-delay: 0.4s; opacity: 0; }
+    .delay-500 { animation-delay: 0.5s; opacity: 0; }
+    
+    /* ==========================================
+       GRADIENT BACKGROUNDS
+       ========================================== */
+    .gradient-primary {
+      background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 50%, #1e293b 100%);
+    }
+    
+    .gradient-card {
+      background: linear-gradient(145deg, rgba(30, 58, 95, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* ==========================================
+       GLASSMORPHISM EFFECT
+       ========================================== */
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .glass-card {
+      background: rgba(30, 58, 95, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* ==========================================
+       CUSTOM SCROLLBAR
+       ========================================== */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+      border-radius: 4px;
+    }
+    
+    /* ==========================================
+       PROGRESS BAR STYLING
+       ========================================== */
+    .skill-bar {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+      border-radius: 10px;
+      transition: width 1.5s ease-out;
+    }
+    
+    /* ==========================================
+       HOVER EFFECTS
+       ========================================== */
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    }
+    
+    /* ==========================================
+       TIMELINE STYLING
+       ========================================== */
+    .timeline-line {
+      background: linear-gradient(180deg, #3b82f6, #8b5cf6, #ec4899);
+    }
+    
+    .timeline-dot {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+    
+    /* ==========================================
+       PHOTO PLACEHOLDER - AREA UNTUK FOTO
+       Keterangan: Ganti URL atau tambahkan foto Anda
+       ========================================== */
+    .photo-placeholder {
+      background: linear-gradient(135deg, #1e3a5f 0%, #3b82f6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .photo-placeholder::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    }
+    
+    /* ==========================================
+       NAVIGATION ACTIVE STATE
+       ========================================== */
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    
+    /* ==========================================
+       SECTION STYLING
+       ========================================== */
+    section {
+      scroll-margin-top: 80px;
+    }
+    
+    /* ==========================================
+       PORTFOLIO CARD OVERLAY
+       ========================================== */
+    .portfolio-card {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.95) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .portfolio-card:hover .portfolio-overlay {
+      opacity: 1;
+    }
+    
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-poppins gradient-primary text-white">
+  <div id="app-wrapper" class="w-full h-full overflow-auto"><!-- ============================================
+         HEADER / NAVIGASI
+         Fungsi: Identitas dan navigasi utama website
+         ============================================ -->
+   <header id="header" class="fixed top-0 left-0 right-0 z-50 glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex items-center justify-between h-16 md:h-20"><!-- Logo / Nama -->
+      <div class="flex items-center space-x-3"><!-- Icon Logo -->
+       <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center"><span class="text-white font-bold text-xl">M</span>
+       </div>
+       <div class="hidden sm:block">
+        <h1 id="logo-text" class="text-lg font-semibold text-white">Muhammad Idzam</h1>
+        <p class="text-xs text-blue-300 -mt-1">Portfolio</p>
+       </div>
+      </div><!-- Menu Navigasi Desktop -->
+      <nav class="hidden md:flex items-center space-x-8"><a href="#home" class="nav-link text-white hover:text-blue-400 transition-colors font-medium">Home</a> <a href="#about" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">About</a> <a href="#skills" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Skills</a> <a href="#portfolio" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Portfolio</a> <a href="#contact" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Contact</a>
+      </nav><!-- Tombol CTA Header -->
+      <div class="hidden md:block"><a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all"> Hubungi Saya </a>
+      </div><!-- Hamburger Menu Mobile --> <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-blue-500 bg-gradient-to-br from-blue-500 to-purple-600 transition-colors">
+       <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-slate-900/95 backdrop-blur-lg md:hidden">
+     <div class="p-6"><button id="close-menu-btn" class="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-lg">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+       </svg></button>
+      <nav class="mt-12 flex flex-col space-y-4"><a href="#home" class="mobile-nav-link text-white hover:text-blue-400 py-2 border-b border-white/10">Home</a> <a href="#about" class="mobile-nav-link text-gray-300 hover:text-blue-400 py-2 border-b border-white/10">About</a> <a href="#skills" class="mobile-nav-link text-gray-300 hover:text-blue-400 py-2 border-b border-white/10">Skills</a> <a href="#portfolio" class="mobile-nav-link text-gray-300 hover:text-blue-400 py-2 border-b border-white/10">Portfolio</a> <a href="#contact" class="mobile-nav-link text-gray-300 hover:text-blue-400 py-2 border-b border-white/10">Contact</a>
+      </nav>
+     </div>
+    </div>
+   </header><!-- ============================================
+         SECTION 1: HOME / BERANDA
+         Fungsi: Halaman pembuka dengan kesan pertama
+         ============================================ -->
+   <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden"><!-- Background Decorations -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none"><!-- Lingkaran dekorasi -->
+     <div class="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+     <div class="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+     <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+     <div class="grid lg:grid-cols-2 gap-12 items-center"><!-- Konten Teks -->
+      <div class="order-2 lg:order-1 text-center lg:text-left"><!-- Tagline Arabic -->
+       <div class="animate-fade-up delay-100">
+        <p class="font-arabic text-2xl md:text-3xl text-blue-400 mb-2">مَنْ جَدَّ وَجَدَ</p>
+        <p class="text-sm md:text-base text-gray-400 italic mb-6">"Man Jadda Wa Jada - Barangsiapa yang bersungguh-sungguh, maka dia akan berhasil"</p>
+       </div><!-- Sapaan -->
+       <p class="animate-fade-up delay-200 text-blue-400 font-medium mb-2">Assalamu'alaikum, Saya</p><!-- Nama Lengkap -->
+       <h1 id="hero-name" class="animate-fade-up delay-300 text-4xl md:text-5xl lg:text-6xl font-bold mb-4"><span class="gradient-text">Muhammad Idzam</span> <br><span class="text-white text-3xl md:text-4xl lg:text-5xl">El-Jalaluddin Rummi</span></h1><!-- Peran/Keahlian -->
+       <p id="hero-role" class="animate-fade-up delay-400 text-xl md:text-2xl text-gray-300 mb-6">Siswa Antusias dalam <span class="text-blue-400 font-semibold">Management</span> &amp; <span class="text-purple-400 font-semibold">Seni</span></p><!-- Perkenalan Singkat -->
+       <p class="animate-fade-up delay-500 text-gray-400 max-w-xl mb-8 leading-relaxed">Saya adalah seorang siswa kelas XII dari <span class="text-white font-medium">SMAN 1 Subang</span> yang memiliki semangat tinggi dalam mengembangkan diri di bidang manajemen dan seni. Dengan pengalaman sebagai <span class="text-blue-400">Ketua OSIS</span> dan berbagai prestasi, saya berkomitmen untuk terus belajar dan berkontribusi bagi kemajuan Indonesia.</p><!-- Tombol CTA -->
+       <div class="animate-fade-up delay-500 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"><a href="#portfolio" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:scale-105"> 📂 Lihat Portofolio </a> <a href="#contact" class="px-8 py-3 border-2 border-blue-500 rounded-full text-blue-400 font-semibold hover:bg-blue-500 hover:text-white transition-all"> ✉️ Hubungi Saya </a>
+       </div><!-- Social Links -->
+       <div class="animate-fade-up delay-500 flex gap-4 mt-8 justify-center lg:justify-start"><a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-blue-500/20 transition-colors" title="Instagram">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+         </svg></a> <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-blue-500/20 transition-colors" title="LinkedIn">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+         </svg></a> <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-blue-500/20 transition-colors" title="Email">
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+         </svg></a>
+       </div>
+      </div><!-- ============================================
+               AREA FOTO PROFIL
+               KETERANGAN UNTUK UPLOAD FOTO:
+               
+               Untuk menambahkan foto Anda:
+               1. Ganti seluruh div dengan class "photo-placeholder" 
+                  dengan tag <img>
+               2. Contoh: 
+                  <img src="URL_FOTO_ANDA" 
+                       alt="Foto Muhammad Idzam"
+                       class="w-full h-full object-cover">
+               3. Ukuran yang disarankan: 500x500 pixel atau lebih
+               4. Format: JPG, PNG, atau WebP
+               ============================================ -->
+      <div class="order-1 lg:order-2 flex justify-center">
+       <div class="relative"><!-- Frame Foto dengan Efek -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl blur-2xl opacity-30 animate-pulse-glow"></div>
+        <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-4 border-white/10 animate-float"><!-- FOTO PROFIL UTAMA --> <img src="https://img.sanishtech.com/u/44494fd019f869e23c1381afef3055f9.jpg" alt="Foto Muhammad Idzam El-Jalaluddin Rummi" class="w-full h-full object-cover" loading="lazy" onerror="this.style.background='linear-gradient(135deg, #1e3a5f 0%, #3b82f6 100%)'; this.alt='Foto tidak tersedia';">
+        </div><!-- Badge Dekoratif -->
+        <div class="absolute -bottom-4 -right-4 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg"><span class="text-white font-semibold text-sm">🎓 SMAN 1 Subang</span>
+        </div><!-- Badge Ketua OSIS -->
+        <div class="absolute -top-4 -left-4 px-4 py-2 glass rounded-full"><span class="text-blue-400 font-semibold text-sm">⭐ Ex-Ketua OSIS</span>
+        </div>
+       </div>
+      </div>
+     </div><!-- Scroll Indicator -->
+     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"><a href="#about" class="flex flex-col items-center text-gray-400 hover:text-blue-400 transition-colors"> <span class="text-sm mb-2">Scroll ke bawah</span>
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+       </svg></a>
+     </div>
+    </div>
+   </section><!-- ============================================
+         SECTION 2: ABOUT ME / TENTANG SAYA
+         Fungsi: Profil diri secara lengkap
+         ============================================ -->
+   <section id="about" class="py-20 relative"><!-- Background Decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+     <div class="absolute top-1/4 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><!-- Section Header -->
+     <div class="text-center mb-16">
+      <p class="text-blue-400 font-medium mb-2">Kenali Saya Lebih Dekat</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold"><span class="gradient-text">Tentang Saya</span></h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-4 rounded-full"></div>
+     </div>
+     <div class="grid lg:grid-cols-2 gap-12 items-start"><!-- Kolom Kiri: Bio dan Info -->
+      <div class="space-y-8"><!-- Card Latar Belakang -->
+       <div class="glass-card rounded-2xl p-6 hover-lift">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center"><span class="text-2xl">📖</span>
+         </div>
+         <h3 class="text-xl font-bold text-white">Latar Belakang</h3>
+        </div>
+        <p class="text-gray-300 leading-relaxed">Saya lahir pada <span class="text-blue-400 font-medium">6 September 2007</span> dan merupakan anak pertama dari dua bersaudara. Saat ini saya adalah siswa dengan minat di bidang <span class="text-purple-400 font-medium">seni dan manajemen</span>, serta berencana melanjutkan studi Manajemen Keuangan Negara di <span class="text-white font-semibold">PKN STAN</span>, S2 Magister Manajemen/Administrasi Bisnis di <span class="text-white font-semibold">Central Queensland University (Australia)</span>, dan S3 Manajemen di <span class="text-white font-semibold">Monash University</span>.</p>
+        <p class="text-gray-400 mt-4 leading-relaxed">Melalui pendidikan tersebut, saya berharap dapat membangun kompetensi dan kepemimpinan yang berintegritas serta berkontribusi bagi kemajuan Indonesia.</p>
+       </div><!-- Card Minat dan Tujuan -->
+       <div class="glass-card rounded-2xl p-6 hover-lift">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center"><span class="text-2xl">🎯</span>
+         </div>
+         <h3 class="text-xl font-bold text-white">Minat &amp; Tujuan</h3>
+        </div>
+        <p class="text-gray-300 leading-relaxed">Saya ingin mengembangkan keahlian di bidang <span class="text-blue-400">manajemen dan keuangan</span> dengan menggabungkan pemikiran strategis, integritas, dan kepemimpinan, serta berkontribusi dalam menciptakan sistem pengelolaan yang <span class="text-purple-400">efektif, transparan, dan berdampak berkelanjutan</span>.</p>
+        <p class="text-gray-400 mt-4 leading-relaxed">Tujuan saya adalah menjadi profesional yang adaptif dan kompeten, mampu mengambil keputusan bernilai jangka panjang, serta memberikan kontribusi nyata bagi kemajuan organisasi dan pembangunan Indonesia.</p>
+       </div><!-- Info Cards Grid -->
+       <div class="grid grid-cols-2 gap-4">
+        <div class="glass-card rounded-xl p-4 text-center hover-lift">
+         <p class="text-3xl font-bold gradient-text">17</p>
+         <p class="text-gray-400 text-sm">Tahun</p>
+        </div>
+        <div class="glass-card rounded-xl p-4 text-center hover-lift">
+         <p class="text-3xl font-bold gradient-text">XII</p>
+         <p class="text-gray-400 text-sm">Kelas IPA</p>
+        </div>
+        <div class="glass-card rounded-xl p-4 text-center hover-lift">
+         <p class="text-3xl font-bold gradient-text">1</p>
+         <p class="text-gray-400 text-sm">Ex-Ketua OSIS</p>
+        </div>
+        <div class="glass-card rounded-xl p-4 text-center hover-lift">
+         <p class="text-3xl font-bold gradient-text">10+</p>
+         <p class="text-gray-400 text-sm">Prestasi</p>
+        </div>
+       </div>
+      </div><!-- Kolom Kanan: Timeline Pendidikan -->
+      <div class="relative">
+       <div class="flex items-center gap-3 mb-8">
+        <div class="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center"><span class="text-2xl">🎓</span>
+        </div>
+        <h3 class="text-xl font-bold text-white">Riwayat Pendidikan</h3>
+       </div><!-- Timeline -->
+       <div class="relative"><!-- Garis Timeline -->
+        <div class="absolute left-6 top-0 bottom-0 w-0.5 timeline-line"></div><!-- Item Timeline 1: SMAN 1 Subang -->
+        <div class="relative flex gap-6 mb-8">
+         <div class="w-12 h-12 rounded-full timeline-dot flex items-center justify-center flex-shrink-0 z-10"><span class="text-xl">��</span>
+         </div>
+         <div class="glass-card rounded-xl p-4 flex-1 hover-lift">
+          <div class="flex items-center justify-between mb-2">
+           <h4 class="font-bold text-white">SMAN 1 Subang</h4><span class="text-xs px-2 py-1 bg-blue-500/20 text-blue-400 rounded-full">Sekarang</span>
+          </div>
+          <p class="text-gray-400 text-sm">Kelas XII - Jurusan IPA</p>
+          <p class="text-gray-500 text-xs mt-1">2022 - Sekarang</p>
+         </div>
+        </div><!-- Item Timeline 2: SMPIT Alamy -->
+        <div class="relative flex gap-6 mb-8">
+         <div class="w-12 h-12 rounded-full timeline-dot flex items-center justify-center flex-shrink-0 z-10"><span class="text-xl">��</span>
+         </div>
+         <div class="glass-card rounded-xl p-4 flex-1 hover-lift">
+          <h4 class="font-bold text-white mb-2">SMPIT Alamy</h4>
+          <p class="text-gray-400 text-sm">Sekolah Menengah Pertama Islam Terpadu</p>
+          <p class="text-gray-500 text-xs mt-1">2019 - 2022</p>
+          <p class="text-blue-400 text-xs mt-2">⭐ Ketua OSIS 2021/2022</p>
+         </div>
+        </div><!-- Item Timeline 3: SDIT Alamy -->
+        <div class="relative flex gap-6 mb-8">
+         <div class="w-12 h-12 rounded-full timeline-dot flex items-center justify-center flex-shrink-0 z-10"><span class="text-xl">✏️</span>
+         </div>
+         <div class="glass-card rounded-xl p-4 flex-1 hover-lift">
+          <h4 class="font-bold text-white mb-2">SDIT Alamy</h4>
+          <p class="text-gray-400 text-sm">Sekolah Dasar Islam Terpadu</p>
+          <p class="text-gray-500 text-xs mt-1">2014 - 2019</p>
+         </div>
+        </div><!-- Item Timeline 4: TKIT Asyifa -->
+        <div class="relative flex gap-6">
+         <div class="w-12 h-12 rounded-full timeline-dot flex items-center justify-center flex-shrink-0 z-10"><span class="text-xl">🌟</span>
+         </div>
+         <div class="glass-card rounded-xl p-4 flex-1 hover-lift">
+          <h4 class="font-bold text-white mb-2">TKIT Asyifa</h4>
+          <p class="text-gray-400 text-sm">Taman Kanak-Kanak Islam Terpadu</p>
+          <p class="text-gray-500 text-xs mt-1">2011 - 2014</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- ============================================
+         SECTION 3: SKILLS / KEAHLIAN
+         Fungsi: Menampilkan kemampuan yang dimiliki
+         ============================================ -->
+   <section id="skills" class="py-20 relative"><!-- Background Decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+     <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><!-- Section Header -->
+     <div class="text-center mb-16">
+      <p class="text-blue-400 font-medium mb-2">Apa yang Saya Kuasai</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold"><span class="gradient-text">Keahlian</span></h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-4 rounded-full"></div>
+     </div>
+     <div class="grid lg:grid-cols-2 gap-12"><!-- Hard Skills -->
+      <div class="glass-card rounded-2xl p-8">
+       <div class="flex items-center gap-3 mb-8">
+        <div class="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center"><span class="text-3xl">💻</span>
+        </div>
+        <div>
+         <h3 class="text-2xl font-bold text-white">Hard Skills</h3>
+         <p class="text-gray-400 text-sm">Kemampuan Teknis</p>
+        </div>
+       </div>
+       <div class="space-y-6"><!-- HTML -->
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-white font-medium flex items-center gap-2"> <span class="text-lg">🌐</span> HTML </span> <span class="text-blue-400 font-semibold">90%</span>
+         </div>
+         <div class="skill-bar h-3">
+          <div class="skill-progress h-full" style="width: 90%;"></div>
+         </div>
+        </div><!-- CSS -->
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-white font-medium flex items-center gap-2"> <span class="text-lg">🎨</span> CSS </span> <span class="text-blue-400 font-semibold">90%</span>
+         </div>
+         <div class="skill-bar h-3">
+          <div class="skill-progress h-full" style="width: 90%;"></div>
+         </div>
+        </div><!-- Canva -->
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-white font-medium flex items-center gap-2"> <span class="text-lg">🖼️</span> Canva </span> <span class="text-blue-400 font-semibold">90%</span>
+         </div>
+         <div class="skill-bar h-3">
+          <div class="skill-progress h-full" style="width: 90%;"></div>
+         </div>
+        </div><!-- Microsoft Word -->
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-white font-medium flex items-center gap-2"> <span class="text-lg">📝</span> Microsoft Word </span> <span class="text-blue-400 font-semibold">90%</span>
+         </div>
+         <div class="skill-bar h-3">
+          <div class="skill-progress h-full" style="width: 90%;"></div>
+         </div>
+        </div><!-- Microsoft Excel -->
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-white font-medium flex items-center gap-2"> <span class="text-lg">📊</span> Microsoft Excel </span> <span class="text-blue-400 font-semibold">90%</span>
+         </div>
+         <div class="skill-bar h-3">
+          <div class="skill-progress h-full" style="width: 90%;"></div>
+         </div>
+        </div><!-- Gaming -->
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-white font-medium flex items-center gap-2"> <span class="text-lg">🎮</span> Gaming </span> <span class="text-blue-400 font-semibold">90%</span>
+         </div>
+         <div class="skill-bar h-3">
+          <div class="skill-progress h-full" style="width: 90%;"></div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Soft Skills -->
+      <div class="glass-card rounded-2xl p-8">
+       <div class="flex items-center gap-3 mb-8">
+        <div class="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center"><span class="text-3xl">🧠</span>
+        </div>
+        <div>
+         <h3 class="text-2xl font-bold text-white">Soft Skills</h3>
+         <p class="text-gray-400 text-sm">Kemampuan Non-Teknis</p>
+        </div>
+       </div>
+       <div class="grid grid-cols-2 gap-4"><!-- Komunikasi -->
+        <div class="glass rounded-xl p-4 text-center hover-lift"><span class="text-4xl block mb-3">🗣️</span>
+         <h4 class="text-white font-semibold mb-1">Komunikasi</h4>
+         <p class="text-gray-400 text-xs">Public Speaking</p>
+        </div><!-- Kerja Sama Tim -->
+        <div class="glass rounded-xl p-4 text-center hover-lift"><span class="text-4xl block mb-3">🤝</span>
+         <h4 class="text-white font-semibold mb-1">Kerja Sama Tim</h4>
+         <p class="text-gray-400 text-xs">Teamwork</p>
+        </div><!-- Kreativitas -->
+        <div class="glass rounded-xl p-4 text-center hover-lift"><span class="text-4xl block mb-3">💡</span>
+         <h4 class="text-white font-semibold mb-1">Kreativitas</h4>
+         <p class="text-gray-400 text-xs">Creative Thinking</p>
+        </div><!-- Kepemimpinan -->
+        <div class="glass rounded-xl p-4 text-center hover-lift"><span class="text-4xl block mb-3">👑</span>
+         <h4 class="text-white font-semibold mb-1">Kepemimpinan</h4>
+         <p class="text-gray-400 text-xs">Leadership</p>
+        </div><!-- Menyanyi -->
+        <div class="glass rounded-xl p-4 text-center hover-lift"><span class="text-4xl block mb-3">🎤</span>
+         <h4 class="text-white font-semibold mb-1">Menyanyi</h4>
+         <p class="text-gray-400 text-xs">Vocal</p>
+        </div><!-- Drama Monolog -->
+        <div class="glass rounded-xl p-4 text-center hover-lift"><span class="text-4xl block mb-3">🎭</span>
+         <h4 class="text-white font-semibold mb-1">Drama Monolog</h4>
+         <p class="text-gray-400 text-xs">Acting</p>
+        </div>
+       </div><!-- Note -->
+       <div class="mt-6 p-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-500/20">
+        <p class="text-gray-300 text-sm leading-relaxed"><span class="text-blue-400 font-semibold">📌 Catatan:</span> Soft skills ini terasah melalui pengalaman organisasi selama menjabat sebagai <span class="text-white font-medium">Ketua OSIS SMPIT 'ALAMY Subang</span>, mengikuti berbagai les, dan pengalaman berbagai lomba.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- ============================================
+         SECTION 4: PORTFOLIO / PENGALAMAN
+         Fungsi: Bagian inti - menampilkan karya/prestasi
+         ============================================ -->
+   <section id="portfolio" class="py-20 relative"><!-- Background Decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+     <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><!-- Section Header -->
+     <div class="text-center mb-16">
+      <p class="text-blue-400 font-medium mb-2">Pencapaian &amp; Pengalaman</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold"><span class="gradient-text">Portfolio</span></h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-4 rounded-full"></div>
+      <p class="text-gray-400 max-w-2xl mx-auto mt-6">Beragam pengalaman organisasi, les, dan lomba-lomba yang saya jalani telah mengasah kemampuan kepemimpinan, memperkuat keterampilan manajerial, serta membentuk sikap tanggung jawab dan kerja sama dalam mencapai tujuan bersama.</p>
+     </div><!-- Filter Tabs -->
+     <div class="flex flex-wrap justify-center gap-3 mb-12"><button class="portfolio-filter active px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium transition-all" data-filter="all"> Semua </button> <button class="portfolio-filter px-6 py-2 rounded-full glass text-gray-300 hover:text-white font-medium transition-all" data-filter="organisasi"> Organisasi </button> <button class="portfolio-filter px-6 py-2 rounded-full glass text-gray-300 hover:text-white font-medium transition-all" data-filter="prestasi"> Prestasi </button> <button class="portfolio-filter px-6 py-2 rounded-full glass text-gray-300 hover:text-white font-medium transition-all" data-filter="kegiatan"> Kegiatan </button>
+     </div><!-- Portfolio Grid -->
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid"><!-- ============================================
+               PORTFOLIO ITEM 1: Ketua OSIS
+               KETERANGAN FOTO:
+               Ganti div photo-placeholder dengan:
+               <img src="URL_FOTO" alt="Ketua OSIS" 
+                    class="w-full h-full object-cover" loading="lazy">
+               ============================================ -->
+      <div class="portfolio-item" data-category="organisasi">
+       <div class="glass-card rounded-2xl overflow-hidden hover-lift group"><!-- Area Foto Portfolio -->
+        <div class="h-48 relative overflow-hidden"><!-- 
+                  🖼️ AREA FOTO - KETUA OSIS
+                  Ganti placeholder ini dengan foto kegiatan OSIS
+                  Contoh: <img src="URL" alt="Ketua OSIS" class="w-full h-full object-cover" loading="lazy">
+                -->
+         <div class="photo-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-700">
+          <div class="text-center"><span class="text-5xl">👑</span>
+           <p class="text-white/70 text-xs mt-2">Upload Foto OSIS</p>
+          </div>
+         </div><!-- Overlay -->
+         <div class="portfolio-overlay flex items-end p-4"><span class="px-3 py-1 bg-blue-500/80 rounded-full text-xs text-white">Organisasi</span>
+         </div>
+        </div><!-- Konten -->
+        <div class="p-5">
+         <h3 class="text-lg font-bold text-white mb-2">Ketua OSIS SMPIT 'ALAMY</h3>
+         <p class="text-gray-400 text-sm mb-3">Periode 2021/2022</p>
+         <p class="text-gray-300 text-sm leading-relaxed">Memimpin kepengurusan OSIS, mengoordinasi seluruh kegiatan kesiswaan dan pembinaan karakter.</p>
+         <div class="flex items-center gap-2 mt-4"><span class="text-xs px-2 py-1 bg-blue-500/20 text-blue-400 rounded">Leadership</span> <span class="text-xs px-2 py-1 bg-purple-500/20 text-purple-400 rounded">Management</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- ============================================
+               PORTFOLIO ITEM 2: Anggota MPK
+               KETERANGAN FOTO:
+               Ganti div photo-placeholder dengan:
+               <img src="URL_FOTO" alt="MPK" 
+                    class="w-full h-full object-cover" loading="lazy">
+               ============================================ -->
+      <div class="portfolio-item" data-category="organisasi">
+       <div class="glass-card rounded-2xl overflow-hidden hover-lift group">
+        <div class="h-48 relative overflow-hidden"><!-- 
+                  🖼️ AREA FOTO - MPK KOMISI KEDISIPLINAN
+                  Ganti placeholder ini dengan foto kegiatan MPK
+                -->
+         <div class="photo-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-green-600 to-teal-700">
+          <div class="text-center"><span class="text-5xl">⚖️</span>
+           <p class="text-white/70 text-xs mt-2">Upload Foto MPK</p>
+          </div>
+         </div>
+         <div class="portfolio-overlay flex items-end p-4"><span class="px-3 py-1 bg-green-500/80 rounded-full text-xs text-white">Organisasi</span>
+         </div>
+        </div>
+        <div class="p-5">
+         <h3 class="text-lg font-bold text-white mb-2">Anggota MPK Komisi 3</h3>
+         <p class="text-gray-400 text-sm mb-3">Bidang Kedisiplinan</p>
+         <p class="text-gray-300 text-sm leading-relaxed">Bertugas mengawasi penerapan tata tertib sekolah serta menjaga kedisiplinan siswa.</p>
+         <div class="flex items-center gap-2 mt-4"><span class="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded">Disiplin</span> <span class="text-xs px-2 py-1 bg-teal-500/20 text-teal-400 rounded">Tanggung Jawab</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- ============================================
+               PORTFOLIO ITEM 5: Drama Monolog
+               ============================================ -->
+      <div class="portfolio-item" data-category="prestasi">
+       <div class="glass-card rounded-2xl overflow-hidden hover-lift group">
+        <div class="h-48 relative overflow-hidden"><!-- 
+                  🖼️ AREA FOTO - DRAMA MONOLOG
+                  Ganti placeholder ini dengan foto penampilan monolog
+                -->
+         <div class="photo-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-600 to-rose-700">
+          <div class="text-center"><span class="text-5xl">🎭</span>
+           <p class="text-white/70 text-xs mt-2">Upload Foto Monolog</p>
+          </div>
+         </div>
+         <div class="portfolio-overlay flex items-end p-4"><span class="px-3 py-1 bg-pink-500/80 rounded-full text-xs text-white">Prestasi</span>
+         </div>
+        </div>
+        <div class="p-5">
+         <h3 class="text-lg font-bold text-white mb-2">Juara 1 Monolog</h3>
+         <p class="text-gray-400 text-sm mb-3">Bulan Bahasa SMAN 1 Subang</p>
+         <div class="flex items-center gap-2 mt-4"><span class="text-xs px-2 py-1 bg-pink-500/20 text-pink-400 rounded">Juara 1</span> <span class="text-xs px-2 py-1 bg-rose-500/20 text-rose-400 rounded">Drama</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- ============================================
+               PORTFOLIO ITEM 7: PASKIBRAKA TINGKAT KABUPATEN/KOTA
+               ============================================ -->
+      <div class="portfolio-item" data-category="prestasi">
+       <div class="glass-card rounded-2xl overflow-hidden hover-lift group">
+        <div class="h-48 relative overflow-hidden"><!-- 
+                  🖼️ AREA FOTO - PASKIBRAKA
+                  Ganti placeholder ini dengan foto saat menjadi pembentang bendera PASKIBRAKA
+                -->
+         <div class="photo-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-800">
+          <div class="text-center"><span class="text-5xl">🚩</span>
+           <p class="text-white/70 text-xs mt-2">Upload Foto PASKIBRAKA</p>
+          </div>
+         </div>
+         <div class="portfolio-overlay flex items-end p-4"><span class="px-3 py-1 bg-red-500/80 rounded-full text-xs text-white">Prestasi</span>
+         </div>
+        </div>
+        <div class="p-5">
+         <h3 class="text-lg font-bold text-white mb-2">PASKIBRAKA Kabupaten/Kota</h3>
+         <p class="text-gray-400 text-sm mb-3">Pembentang Bendera Nasional 2024/2025</p>
+         <p class="text-gray-300 text-sm leading-relaxed">Terpilih sebagai anggota PASKIBRAKA (Pasukan Pengibar Bendera) tingkat Kabupaten/Kota, menjadi pembentang bendera nasional dalam upacara resmi, merepresentasikan semangat patriotisme dan dedikasi.</p>
+         <div class="flex items-center gap-2 mt-4"><span class="text-xs px-2 py-1 bg-red-500/20 text-red-400 rounded">Patriotisme</span> <span class="text-xs px-2 py-1 bg-amber-500/20 text-amber-400 rounded">Kepemimpinan</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- ============================================
+               PORTFOLIO ITEM 8: Juara 4 Menyanyi Solo FLS3N
+               ============================================ -->
+      <div class="portfolio-item" data-category="prestasi">
+       <div class="glass-card rounded-2xl overflow-hidden hover-lift group">
+        <div class="h-48 relative overflow-hidden"><!-- 
+                  🖼️ AREA FOTO - MENYANYI SOLO
+                  Ganti placeholder ini dengan foto saat berpartisipasi di FLS3N
+                -->
+         <div class="photo-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500 to-yellow-600">
+          <div class="text-center"><span class="text-5xl">🎵</span>
+           <p class="text-white/70 text-xs mt-2">Upload Foto Menyanyi</p>
+          </div>
+         </div>
+         <div class="portfolio-overlay flex items-end p-4"><span class="px-3 py-1 bg-yellow-500/80 rounded-full text-xs text-white">Prestasi</span>
+         </div>
+        </div>
+        <div class="p-5">
+         <h3 class="text-lg font-bold text-white mb-2">Juara 4 Menyanyi Solo Putra</h3>
+         <p class="text-gray-400 text-sm mb-3">FLS3N Sekabupaten Subang</p>
+         <p class="text-gray-300 text-sm leading-relaxed">Meraih prestasi Juara 4 dalam kompetisi Menyanyi Solo Putra pada ajang FLS3N (Festival Literasi Siswa Sekolah Sejahteraan Nasional) se-Kabupaten Subang, menampilkan kemampuan vokal dan interpretasi musik.</p>
+         <div class="flex items-center gap-2 mt-4"><span class="text-xs px-2 py-1 bg-orange-500/20 text-orange-400 rounded">Juara 4</span> <span class="text-xs px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded">Vokal</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- ============================================
+               PORTFOLIO ITEM 9: Juara 1 Monolog Bulan Bahasa
+               ============================================ -->
+      <div class="portfolio-item" data-category="prestasi">
+       <div class="glass-card rounded-2xl overflow-hidden hover-lift group">
+        <div class="h-48 relative overflow-hidden"><!-- 
+                  🖼️ AREA FOTO - JUARA 1 MONOLOG
+                  Ganti placeholder ini dengan foto saat tampil monolog di bulan bahasa
+                -->
+         <div class="photo-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-500 to-rose-600">
+          <div class="text-center"><span class="text-5xl">🏆</span>
+           <p class="text-white/70 text-xs mt-2">Upload Foto Monolog</p>
+          </div>
+         </div>
+         <div class="portfolio-overlay flex items-end p-4"><span class="px-3 py-1 bg-pink-500/80 rounded-full text-xs text-white">Prestasi</span>
+         </div>
+        </div>
+        <div class="p-5">
+         <h3 class="text-lg font-bold text-white mb-2">Juara 1 Monolog</h3>
+         <p class="text-gray-400 text-sm mb-3">Bulan Bahasa SMAN 1 Subang</p>
+         <p class="text-gray-300 text-sm leading-relaxed">Meraih Juara 1 dalam kompetisi Monolog pada acara Bulan Bahasa di SMAN 1 Subang, menampilkan ekspresi emosi dan pemahaman mendalam terhadap naskah dengan penampilan yang memukau.</p>
+         <div class="flex items-center gap-2 mt-4"><span class="text-xs px-2 py-1 bg-pink-500/20 text-pink-400 rounded">Juara 1</span> <span class="text-xs px-2 py-1 bg-rose-500/20 text-rose-400 rounded">Drama</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- ============================================
+               PORTFOLIO ITEM 10: Juara 1 Dakwah Putra Isra Mi'raj
+               ============================================ -->
+      <div class="portfolio-item" data-category="prestasi">
+       <div class="glass-card rounded-2xl overflow-hidden hover-lift group">
+        <div class="h-48 relative overflow-hidden"><!-- 
+                  🖼️ AREA FOTO - DAKWAH PUTRA
+                  Ganti placeholder ini dengan foto saat tampil dakwah di Isra Mi'raj
+                -->
+         <div class="photo-placeholder w-full h-full flex items-center justify-center bg-gradient-to-br from-teal-600 to-cyan-700">
+          <div class="text-center"><span class="text-5xl">🌙</span>
+           <p class="text-white/70 text-xs mt-2">Upload Foto Dakwah</p>
+          </div>
+         </div>
+         <div class="portfolio-overlay flex items-end p-4"><span class="px-3 py-1 bg-teal-500/80 rounded-full text-xs text-white">Prestasi</span>
+         </div>
+        </div>
+        <div class="p-5">
+         <h3 class="text-lg font-bold text-white mb-2">Juara 1 Dakwah Putra</h3>
+         <p class="text-gray-400 text-sm mb-3">Acara Isra Mi'raj SMAN 1 Subang</p>
+         <p class="text-gray-300 text-sm leading-relaxed">Meraih Juara 1 dalam kompetisi Dakwah Putra pada acara Isra Mi'raj di SMAN 1 Subang, menampilkan kemampuan berbicara, pemahaman nilai spiritual, dan kemampuan mengkomunikasikan pesan dengan efektif.</p>
+         <div class="flex items-center gap-2 mt-4"><span class="text-xs px-2 py-1 bg-teal-500/20 text-teal-400 rounded">Juara 1</span> <span class="text-xs px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded">Dakwah</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- ============================================
+         SECTION 5: CONTACT / KONTAK
+         Fungsi: Informasi kontak dan form komunikasi
+         ============================================ -->
+   <section id="contact" class="py-20 relative"><!-- Background Decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+     <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><!-- Section Header -->
+     <div class="text-center mb-16">
+      <p class="text-blue-400 font-medium mb-2">Mari Terhubung</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold"><span class="gradient-text">Hubungi Saya</span></h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-4 rounded-full"></div>
+     </div>
+     <div class="grid lg:grid-cols-2 gap-12"><!-- Info Kontak -->
+      <div class="space-y-6">
+       <div class="glass-card rounded-2xl p-8">
+        <h3 class="text-2xl font-bold text-white mb-6">Informasi Kontak</h3>
+        <p class="text-gray-300 mb-8">Jangan ragu untuk menghubungi saya. Saya selalu terbuka untuk diskusi, kolaborasi, atau sekadar berbagi ide!</p><!-- Contact Items -->
+        <div class="space-y-4"><a href="#" class="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/5 transition-colors group">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center group-hover:bg-blue-500/30 transition-colors"><span class="text-2xl">📧</span>
+          </div>
+          <div>
+           <p class="text-gray-400 text-sm">Email</p>
+           <p id="contact-email-display" class="text-white font-medium">idzam.rummi@email.com</p>
+          </div></a> <a href="#" class="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/5 transition-colors group">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors"><span class="text-2xl">📍</span>
+          </div>
+          <div>
+           <p class="text-gray-400 text-sm">Lokasi</p>
+           <p class="text-white font-medium">Subang, Jawa Barat, Indonesia</p>
+          </div></a> <a href="#" class="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/5 transition-colors group">
+          <div class="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center group-hover:bg-pink-500/30 transition-colors"><span class="text-2xl">🎓</span>
+          </div>
+          <div>
+           <p class="text-gray-400 text-sm">Sekolah</p>
+           <p class="text-white font-medium">SMAN 1 Subang</p>
+          </div></a>
+        </div><!-- Social Links -->
+        <div class="mt-8">
+         <p class="text-gray-400 mb-4">Temukan saya di:</p>
+         <div class="flex gap-3"><a href="#" class="w-12 h-12 rounded-xl glass flex items-center justify-center hover:bg-blue-500/20 transition-colors" title="Instagram">
+           <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+           </svg></a> <a href="#" class="w-12 h-12 rounded-xl glass flex items-center justify-center hover:bg-blue-500/20 transition-colors" title="LinkedIn">
+           <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+           </svg></a> <a href="#" class="w-12 h-12 rounded-xl glass flex items-center justify-center hover:bg-blue-500/20 transition-colors" title="Twitter/X">
+           <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+           </svg></a> <a href="#" class="w-12 h-12 rounded-xl glass flex items-center justify-center hover:bg-blue-500/20 transition-colors" title="WhatsApp">
+           <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+           </svg></a>
+         </div>
+        </div>
+       </div>
+      </div><!-- Form Kontak -->
+      <div class="glass-card rounded-2xl p-8">
+       <h3 class="text-2xl font-bold text-white mb-6">Kirim Pesan</h3>
+       <form id="contact-form" class="space-y-6">
+        <div><label for="name" class="block text-gray-300 mb-2 font-medium">Nama Lengkap</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 glass rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" placeholder="Masukkan nama Anda">
+        </div>
+        <div><label for="email" class="block text-gray-300 mb-2 font-medium">Email</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 glass rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" placeholder="email@example.com">
+        </div>
+        <div><label for="subject" class="block text-gray-300 mb-2 font-medium">Subjek</label> <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 glass rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" placeholder="Tentang apa?">
+        </div>
+        <div><label for="message" class="block text-gray-300 mb-2 font-medium">Pesan</label> <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 glass rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-none" placeholder="Tulis pesan Anda di sini..."></textarea>
+        </div><button type="submit" class="w-full py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:scale-[1.02]"> <span class="flex items-center justify-center gap-2"> <span>Kirim Pesan</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+          </svg></span> </button>
+       </form><!-- Success Message (Hidden by default) -->
+       <div id="success-message" class="hidden mt-6 p-4 bg-green-500/20 border border-green-500/30 rounded-xl text-center"><span class="text-green-400 font-medium">✅ Pesan berhasil dikirim! Terima kasih telah menghubungi saya.</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- ============================================
+         FOOTER
+         Fungsi: Penutup website dengan info copyright
+         ============================================ -->
+   <footer class="py-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex flex-col md:flex-row items-center justify-between gap-4"><!-- Copyright -->
+      <div class="text-center md:text-left">
+       <p class="text-gray-400">© 2024 <span class="text-white font-medium">Muhammad Idzam El-Jalaluddin Rummi</span>. All rights reserved.</p>
+      </div><!-- Tagline -->
+      <div class="text-center">
+       <p class="font-arabic text-blue-400">مَنْ جَدَّ وَجَدَ</p>
+       <p class="text-gray-500 text-xs">Man Jadda Wa Jada</p>
+      </div><!-- Back to Top --> <a href="#home" class="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors"> <span>Kembali ke Atas</span>
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+       </svg></a>
+     </div>
+    </div>
+   </footer>
+  </div><!-- ============================================
+       JAVASCRIPT
+       Fungsi: Interaktivitas website
+       ============================================ -->
+  <script>
+    // ==========================================
+    // Konfigurasi Default untuk Element SDK
+    // ==========================================
+    const defaultConfig = {
+      hero_title: 'Muhammad Idzam El-Jalaluddin Rummi',
+      hero_subtitle: 'Siswa Antusias dalam Management & Seni',
+      contact_email: 'idzam.rummi@email.com'
+    };
+    
+    // ==========================================
+    // Inisialisasi Element SDK
+    // ==========================================
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          // Update nama di hero section
+          const heroName = document.getElementById('hero-name');
+          if (heroName && config.hero_title) {
+            const names = config.hero_title.split(' ');
+            if (names.length > 2) {
+              heroName.innerHTML = `
+                <span class="gradient-text">${names.slice(0, 2).join(' ')}</span>
+                <br>
+                <span class="text-white text-3xl md:text-4xl lg:text-5xl">${names.slice(2).join(' ')}</span>
+              `;
+            }
+          }
+          
+          // Update subtitle/role
+          const heroRole = document.getElementById('hero-role');
+          if (heroRole && config.hero_subtitle) {
+            heroRole.textContent = config.hero_subtitle;
+          }
+          
+          // Update email
+          const emailDisplay = document.getElementById('contact-email-display');
+          if (emailDisplay && config.contact_email) {
+            emailDisplay.textContent = config.contact_email;
+          }
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['hero_title', config.hero_title || defaultConfig.hero_title],
+          ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+          ['contact_email', config.contact_email || defaultConfig.contact_email]
+        ])
+      });
+    }
+    
+    // ==========================================
+    // Mobile Menu Toggle
+    // ==========================================
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    
+    // Buka menu mobile
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+      });
+    }
+    
+    // Tutup menu mobile
+    if (closeMenuBtn) {
+      closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    }
+    
+    // Tutup menu saat klik link
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+    
+    // ==========================================
+    // Header Scroll Effect
+    // ==========================================
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('bg-slate-900/80');
+        header.classList.remove('bg-transparent');
+      } else {
+        header.classList.remove('bg-slate-900/80');
+        header.classList.add('bg-transparent');
+      }
+    });
+    
+    // ==========================================
+    // Active Navigation Link
+    // ==========================================
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.scrollY >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active', 'text-white');
+        link.classList.add('text-gray-300');
+        
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active', 'text-white');
+          link.classList.remove('text-gray-300');
+        }
+      });
+    });
+    
+    // ==========================================
+    // Portfolio Filter
+    // ==========================================
+    const filterBtns = document.querySelectorAll('.portfolio-filter');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-gradient-to-r', 'from-blue-500', 'to-purple-600', 'text-white');
+          b.classList.add('glass', 'text-gray-300');
+        });
+        btn.classList.remove('glass', 'text-gray-300');
+        btn.classList.add('bg-gradient-to-r', 'from-blue-500', 'to-purple-600', 'text-white');
+        
+        // Filter items
+        const filter = btn.getAttribute('data-filter');
+        
+        portfolioItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+            item.style.animation = 'fadeInUp 0.5s ease forwards';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // ==========================================
+    // Contact Form Handler
+    // ==========================================
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Simulasi pengiriman form
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        // Loading state
+        submitBtn.innerHTML = '<span class="flex items-center justify-center gap-2"><svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg><span>Mengirim...</span></span>';
+        submitBtn.disabled = true;
+        
+        // Simulasi delay
+        setTimeout(() => {
+          // Reset form
+          contactForm.reset();
+          
+          // Show success message
+          successMessage.classList.remove('hidden');
+          
+          // Reset button
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            successMessage.classList.add('hidden');
+          }, 5000);
+        }, 1500);
+      });
+    }
+    
+    // ==========================================
+    // Intersection Observer untuk Animasi
+    // ==========================================
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe semua card
+    document.querySelectorAll('.glass-card, .portfolio-item').forEach(el => {
+      el.style.opacity = '0';
+      observer.observe(el);
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c8b6b30a27b283c',t:'MTc3MDIyMTIyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
